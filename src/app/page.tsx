@@ -5,7 +5,7 @@ import Newsletter from "@/components/Newsletter";
 import { ArticleWithSlug, getAllArticles } from "@/lib/article";
 import { formatDate } from "@/lib/formateDate";
 import { Inter } from "next/font/google";
-import { getBlogPosts } from "@/lib/contentful";
+
 import Photos from "@/components/Photos";
 
 const Article = ({ article }: { article: ArticleWithSlug }) => {
@@ -23,7 +23,6 @@ const Article = ({ article }: { article: ArticleWithSlug }) => {
 
 const inter = Inter({ subsets: ["latin"] });
 export default async function Home() {
-  const posts = await getBlogPosts();
   let articles = (await getAllArticles()).slice(0, 4);
 
   return (
